@@ -11,6 +11,20 @@ M.general = {
   }
 }
 
+M.session = {
+  plugin = true,
+  n = {
+    ["<leader>qs"] = {
+      "<cmd>SessionSave<cr>",
+      "Save session"
+    },
+    ["<leader>qd"] = {
+      "<cmd>SessionDelete<cr>",
+      "Delete current session"
+    },
+  }
+}
+
 M.lazygit = {
   plugin = true,
   n = {
