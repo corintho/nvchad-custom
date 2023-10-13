@@ -1,14 +1,30 @@
 ---@type MappingsTable
 local M = {}
 
+-- Additional quality of life mappings
 M.general = {
   n = {
-    ["<leader>qq"] = {"<cmd>qa<cr>", "Quit all"},
-    ["<leader>qQ"] = {"<cmd>qa!<cr>", "Force quit all"}
+    -- Disable keymaps
+    ["<C-s>"] = { "", ""},
+    ["<leader>ff"] = { "", ""},
+    -- New additions
+    ["<leader>qq"] = { "<cmd>qa<cr>", "Quit all" },
+    ["<leader>qQ"] = { "<cmd>qa!<cr>", "Force quit all" },
+    ["<leader><space>"] = { "<cmd> Telescope find_files <CR>", "Find files" },
+    ["<leader>/"] = { "<cmd> Telescope live_grep <CR>", "Live Grep" },
+    ["<leader>,"] =  {"<cmd>Telescope buffers show_all_buffers=true<cr>", "Switch Buffer" },
+    ["<leader>`"] =  {"<cmd>e #<cr>", "Last Buffer" },
   },
   i = {
-    ["kj"] = { "<ESC>", "escape insert mode" , opts = { nowait = true }},
-  }
+    ["kj"] = { "<ESC>", "escape insert mode", opts = { nowait = true } },
+  },
+}
+
+M.lazygit = {
+  plugin = true,
+  n = {
+    ["<leader>gg"] = { "<cmd>LazyGit<cr>", "Lazygit" },
+  },
 }
 
 M.session = {
@@ -16,19 +32,22 @@ M.session = {
   n = {
     ["<leader>qs"] = {
       "<cmd>SessionSave<cr>",
-      "Save session"
+      "Save session",
     },
     ["<leader>qd"] = {
       "<cmd>SessionDelete<cr>",
-      "Delete current session"
+      "Delete current session",
     },
-  }
+  },
 }
 
-M.lazygit = {
+M.trouble = {
   plugin = true,
   n = {
-    ["<leader>gg"] = {"<cmd>LazyGit<cr>", "Lazygit"}
+    ["<leader>dd"] = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics (Trouble)" },
+    ["<leader>dw"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics (Trouble)" },
+    ["<leader>dl"] = { "<cmd>TroubleToggle loclist<cr>", "Location List (Trouble)" },
+    ["<leader>dq"] = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix List (Trouble)" },
   }
 }
 
