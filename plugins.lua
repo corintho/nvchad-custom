@@ -1,3 +1,4 @@
+local overrides = require("custom.configs.overrides")
 ---@type NvPluginSpec[]
 local plugins = {
   --- Overrides ---
@@ -12,9 +13,35 @@ local plugins = {
   --- LSP ---
   {
     "neovim/nvim-lspconfig",
+    dependencies = {
+      {
+        "williamboman/mason.nvim",
+        opts = overrides.mason,
+        config = function(_, opts)
+          dofile(vim.g.base46_cache .. "mason")
+          dofile(vim.g.base46_cache .. "lsp")
+          require("mason").setup(opts)
+          vim.api.nvim_create_user_command("MasonInstallAll", function()
+            vim.cmd("MasonInstall " .. table.concat(opts.ensure_installed, " "))
+          end, {})
+          require("custom.configs.lspconfig")
+        end,
+      },
+      "williamboman/mason-lspconfig.nvim",
+      { "folke/neodev.nvim", opts = {} },
+    },
+    config = function() end,
+  },
+  {
+    "pmizio/typescript-tools.nvim",
+    ft = {
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact",
+    },
     config = function()
-      require("plugins.configs.lspconfig")
-      require("custom.configs.lspconfig")
+      require("custom.configs.ts")
     end,
   },
   --- Quality of Life ---
