@@ -12,6 +12,9 @@ M.ui = {
       bg = "black2",
     },
   },
+  extended_integrations = {
+    "trouble",
+  },
 }
 
 M.plugins = "custom.plugins"
