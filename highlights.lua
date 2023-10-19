@@ -1,9 +1,10 @@
 local M = {}
 
-M.override = {}
+M.override = {
+  LocalHighlight = { link = "IndentBlanklineContextStart" },
+}
 
 M.add = {
-  LocalHighlight = { link = "IndentBlanklineContextStart" },
   LazyGitBorder = {
     fg = "black2",
     bg = "black2",
