@@ -125,6 +125,14 @@ local plugins = {
       require("custom.configs.biscuits")
     end,
   },
+  {
+    "dnlhc/glance.nvim",
+    event = "LspAttach",
+    cmd = "Glance",
+    config = function()
+      require("custom.configs.glance")
+    end,
+  },
 }
 
 return plugins
