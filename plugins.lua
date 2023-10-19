@@ -142,6 +142,13 @@ local plugins = {
     end,
   },
   --- Miscellaneous ---
+  { -- Jump Jump Jump
+    "folke/flash.nvim",
+    -- event = "VeryLazy",
+    ---@type Flash.Config
+    opts = require("custom.configs.flash").opts,
+    keys = require("custom.configs.flash").keys,
+  },
   {
     "nvim-telescope/telescope-ui-select.nvim",
     event = "VeryLazy",
