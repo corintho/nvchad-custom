@@ -71,6 +71,14 @@ local plugins = {
       hlgroup = "LocalHighlight",
     },
   },
+  {
+    "folke/todo-comments.nvim",
+    event = "BufReadPost",
+    config = function()
+      require("custom.configs.todo")
+      dofile(vim.g.base46_cache .. "todo")
+    end,
+  },
   --- Coding ---
   {
     "stevearc/conform.nvim",

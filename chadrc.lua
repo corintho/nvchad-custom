@@ -9,6 +9,7 @@ M.ui = {
   },
   extended_integrations = {
     "trouble",
+    "todo",
   },
   hl_override = highlights.override,
   hl_add = highlights.add,
