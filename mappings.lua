@@ -62,9 +62,6 @@ M.icon_picker = {
   n = {
     ["<leader>i"] = { "<cmd>IconPickerNormal<cr>", " Icon picker" },
   },
-  -- i = {
-  --   ["c-i"] = { "<cmd>IconPickerInsert<cr>", "Icon picker" },
-  -- },
 }
 
 M.lazygit = {
