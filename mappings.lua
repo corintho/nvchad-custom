@@ -57,6 +57,16 @@ M.glance = {
   },
 }
 
+M.icon_picker = {
+  plugin = true,
+  n = {
+    ["<leader>i"] = { "<cmd>IconPickerNormal<cr>", " Icon picker" },
+  },
+  -- i = {
+  --   ["c-i"] = { "<cmd>IconPickerInsert<cr>", "Icon picker" },
+  -- },
+}
+
 M.lazygit = {
   plugin = true,
   n = {
