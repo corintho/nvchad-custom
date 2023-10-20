@@ -1,5 +1,5 @@
 - [X] Unify all plugins into a single file, as suggested by NvChad documentation. Reference repo: https://github.com/BrunoKrugel/dotfiles
-- [ ] Add formatter/previewer for markdown files
+- [X] Add formatter/previewer for markdown files
 - [X] Add LSP configuration for Javascript/Typescript/Prettier
 - [X] Add outliner - https://github.com/simrat39/symbols-outline.nvim
 - [X] Add code context helper - https://github.com/nvim-treesitter/nvim-treesitter-context

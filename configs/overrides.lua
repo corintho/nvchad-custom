@@ -17,7 +17,7 @@ M.mason = {
 
     -- Spell
     -- "codespell",
-    -- "marksman",
+    "marksman",
     -- "grammarly-languageserver",
 
     -- Json
@@ -47,6 +47,8 @@ M.treesitter = {
     "tsx",
     "html",
     "css",
+    "markdown",
+    "markdown_inline",
   },
 }
 
