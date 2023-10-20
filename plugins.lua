@@ -166,6 +166,11 @@ local plugins = {
       require("symbols-outline").setup()
     end,
   },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    event = "LspAttach",
+    opts = { mode = "cursor", max_lines = 3 },
+  },
   --- Miscellaneous ---
   {
     "folke/flash.nvim",
