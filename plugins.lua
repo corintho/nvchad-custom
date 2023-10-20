@@ -180,6 +180,18 @@ local plugins = {
     keys = require("custom.configs.flash").keys,
   },
   {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      pickers = {
+        buffers = {
+          ignore_current_buffer = true,
+          sort_mru = true,
+          sort_lastused = true,
+        },
+      },
+    },
+  },
+  {
     "nvim-telescope/telescope-ui-select.nvim",
     event = "VeryLazy",
     config = function()
