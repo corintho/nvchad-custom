@@ -3,7 +3,7 @@ local M = {}
 
 local highlights = require("custom.highlights")
 M.ui = {
-  theme = "palenight",
+  theme = "gruvbox",
   transparency = true,
   statusline = {
     theme = "vscode_colored",
