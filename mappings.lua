@@ -92,6 +92,13 @@ M.session = {
   },
 }
 
+M.spectre = {
+  plugin = true,
+  n = {
+    ["<leader>sr"] = { function() require("spectre").open() end, "󰍉 Replace in files (Spectre)" },
+  }
+}
+
 M.todo = {
   plugin = true,
   n = {
