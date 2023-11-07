@@ -65,6 +65,24 @@ local plugins = {
     end,
   },
   {
+    "NeogitOrg/neogit",
+    cmd = "Neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",         -- required
+      "nvim-telescope/telescope.nvim", -- optional
+      "sindrets/diffview.nvim",        -- optional
+    },
+    opts = {
+      kind = "auto",
+    },
+    init = function()
+      require("core.utils").load_mappings("neogit")
+    end,
+    config = function(_, opts)
+      require("neogit").setup(opts)
+    end
+  },
+  {
     "tzachar/local-highlight.nvim",
     event = { "CursorHold", "CursorHoldI" },
     opts = {

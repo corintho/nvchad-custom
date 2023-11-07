@@ -71,6 +71,13 @@ M.lazygit = {
   },
 }
 
+M.neogit = {
+  plugin = true,
+  n = {
+    ["<leader>gm"] = { "<cmd>Neogit<cr>", " Magit (Neogit)" },
+  },
+}
+
 M.outline = {
   plugin = true,
   n = {
