@@ -68,9 +68,9 @@ local plugins = {
     "NeogitOrg/neogit",
     cmd = "Neogit",
     dependencies = {
-      "nvim-lua/plenary.nvim",         -- required
+      "nvim-lua/plenary.nvim", -- required
       "nvim-telescope/telescope.nvim", -- optional
-      "sindrets/diffview.nvim",        -- optional
+      "sindrets/diffview.nvim", -- optional
     },
     opts = {
       kind = "auto",
@@ -80,7 +80,7 @@ local plugins = {
     end,
     config = function(_, opts)
       require("neogit").setup(opts)
-    end
+    end,
   },
   {
     "tzachar/local-highlight.nvim",
@@ -262,16 +262,16 @@ local plugins = {
     end,
   },
   {
-    'wakatime/vim-wakatime',
+    "wakatime/vim-wakatime",
   },
   {
-    'nvim-pack/nvim-spectre',
+    "nvim-pack/nvim-spectre",
     cmd = "Spectre",
     event = "VeryLazy",
     config = function(_, opts)
       require("core.utils").load_mappings("spectre")
       require("spectre").setup(opts)
-    end
+    end,
   },
 }
 
