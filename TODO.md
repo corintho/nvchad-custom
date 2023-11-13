@@ -7,6 +7,6 @@
 - [ ] Add multi selector - https://github.com/mg979/vim-visual-multi
 - [ ] Add signature helper - https://github.com/ray-x/lsp_signature.nvim
 - [ ] Add lens (?) - https://github.com/VidocqH/lsp-lens.nvim
-- [ ] Add Noice - https://github.com/folke/noice.nvim
-- [ ] Add notify - https://github.com/rcarriga/nvim-notify
+- [X] Add Noice - https://github.com/folke/noice.nvim
+- [X] Add notify - https://github.com/rcarriga/nvim-notify
 - [ ] Add edgy (?) - https://github.com/folke/edgy.nvim
