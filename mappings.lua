@@ -81,7 +81,7 @@ M.neogit = {
 M.outline = {
   plugin = true,
   n = {
-    ["<leader>cs"] = { "<cmd>SymbolsOutline<cr>", " Symbols outline" },
+    ["<leader>cs"] = { "<cmd>Outline<cr>", " Toggle symbols outline" },
   },
 }
 
