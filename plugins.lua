@@ -74,6 +74,14 @@ local plugins = {
     },
     opts = {
       kind = "auto",
+      ignored_settings = {
+        "NeogitPushPopup--force-with-lease",
+        "NeogitPushPopup--force",
+        "NeogitPullPopup--rebase",
+        "NeogitCommitPopup--allow-empty",
+        "NeogitCommitPopup--no-verify",
+        "NeogitRevertPopup--no-edit",
+      },
     },
     init = function()
       require("core.utils").load_mappings("neogit")
@@ -151,6 +159,9 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
+    config = function()
+      vim.treesitter.language.register("gitcommit", "NeogitCommitMessage")
+    end,
   },
   {
     "dnlhc/glance.nvim",

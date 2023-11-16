@@ -49,6 +49,7 @@ M.treesitter = {
     "css",
     "markdown",
     "markdown_inline",
+    "gitcommit",
   },
 }
 
