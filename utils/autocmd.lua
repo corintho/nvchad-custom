@@ -5,3 +5,8 @@ autocmd({ "BufNewFile", "BufRead" }, {
   pattern = { "*.podspec", "Podfile" },
   command = "set filetype=ruby",
 })
+
+autocmd({ "UIEnter" }, {
+  desc = "Workaround to properly set theme colors",
+  callback = function() dofile(vim.g.base46_cache .. "syntax") end,
+})
