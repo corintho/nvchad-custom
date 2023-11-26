@@ -7,6 +7,7 @@ vim.g.nvimtree_side = "right"
 if vim.g.neovide then
     vim.o.guifont = "JetBrainsMono Nerd Font Mono:h14"
     vim.g.neovide_cursor_animation_length = 0
+    vim.g.neovide_input_macos_alt_is_meta = true
 end
 
 -- Setup clipboard for WSL
