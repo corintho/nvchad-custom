@@ -8,14 +8,45 @@ M.general = {
     -- Disable keymaps
     ["<C-s>"] = disabled,
     ["<leader>b"] = disabled,
+    ["<tab>"] = disabled,
+    ["<S-tab>"] = disabled,
+    ["<leader>x"] = disabled,
     -- New additions
-    ["<leader>qq"] = { "<cmd>qa<cr>", "Quit all" },
-    ["<leader>qQ"] = { "<cmd>qa!<cr>", "Force quit all" },
-    ["<leader><space>"] = { "<cmd> Telescope find_files <CR>", "Find files" },
-    ["<leader>ff"] = { "<cmd> Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>", " Find all files" },
-    ["<leader>/"] = { function() require('telescope').extensions.live_grep_args.live_grep_args({ additional_args = function() return { "--pcre2" } end }) end, "Live Grep" },
-    ["<leader>,"] = { "<cmd>Telescope buffers show_all_buffers=true<cr>", "Switch Buffer" },
-    ["<leader>`"] = { "<cmd>e #<cr>", "Last Buffer" },
+    ["<leader>qq"] = { "<cmd>qa<cr>", "! Quit all" },
+    ["<leader>qQ"] = { "<cmd>qa!<cr>", "!! Force quit all" },
+    ["<leader><space>"] = { "<cmd> Telescope find_files <CR>", " Find files" },
+    ["<leader>ff"] = {
+      "<cmd> Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>",
+      " Find all files",
+    },
+    ["<leader>/"] = {
+      function()
+        require("telescope").extensions.live_grep_args.live_grep_args({
+          additional_args = function()
+            return { "--pcre2" }
+          end,
+        })
+      end,
+      "Live Grep",
+    },
+    ["<leader>,"] = { "<cmd>Telescope buffers show_all_buffers=true<cr>", " Switch Buffer" },
+    ["<leader>`"] = { "<cmd>e#<cr>", "🔙 Last Buffer" },
+    -- Buffer commands
+    ["<leader>b1"] = { "<cmd>bfirst<cr>", "First buffer" },
+    ["<leader>bn"] = {
+      function()
+        require("nvchad.tabufline").tabuflineNext()
+      end,
+      "Next buffer",
+    },
+    ["<leader>bp"] = {
+      function()
+        require("nvchad.tabufline").tabuflinePrev()
+      end,
+      "Previous buffer",
+    },
+    ["<leader>bx"] = { "<cmd>bd<cr>", "Close current buffer" },
+    ["<leader>bX"] = { "<cmd>%bd|e#<cr>", "Close other buffers" },
   },
   i = {
     ["kj"] = { "<ESC>", "escape insert mode", opts = { nowait = true } },
@@ -45,7 +76,7 @@ M.format = {
     },
     ["<leader>tf"] = {
       "<cmd>ToggleFormatOnSave<cr>",
-      "Toggle format on save",
+      " Toggle format on save",
     },
   },
 }
@@ -67,7 +98,7 @@ M.icon_picker = {
 M.lazygit = {
   plugin = true,
   n = {
-    ["<leader>gg"] = { "<cmd>LazyGit<cr>", "Lazygit" },
+    ["<leader>gg"] = { "<cmd>LazyGit<cr>", " Lazygit" },
   },
 }
 
@@ -102,8 +133,13 @@ M.session = {
 M.spectre = {
   plugin = true,
   n = {
-    ["<leader>sr"] = { function() require("spectre").open() end, "󰍉 Replace in files (Spectre)" },
-  }
+    ["<leader>sr"] = {
+      function()
+        require("spectre").open()
+      end,
+      "󰍉 Replace in files (Spectre)",
+    },
+  },
 }
 
 M.todo = {
@@ -117,10 +153,10 @@ M.todo = {
 M.trouble = {
   plugin = true,
   n = {
-    ["<leader>dd"] = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics (Trouble)" },
-    ["<leader>dw"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics (Trouble)" },
-    ["<leader>dl"] = { "<cmd>TroubleToggle loclist<cr>", "Location List (Trouble)" },
-    ["<leader>dq"] = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix List (Trouble)" },
+    ["<leader>dd"] = { "<cmd>TroubleToggle document_diagnostics<cr>", " Document Diagnostics (Trouble)" },
+    ["<leader>dw"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>", " Workspace Diagnostics (Trouble)" },
+    ["<leader>dl"] = { "<cmd>TroubleToggle loclist<cr>", " Location List (Trouble)" },
+    ["<leader>dq"] = { "<cmd>TroubleToggle quickfix<cr>", " Quickfix List (Trouble)" },
   },
 }
 
