@@ -13,6 +13,12 @@ M.ui = {
     "todo",
     "trouble",
   },
+  lsp = {
+    signature = {
+      disabled = false,
+      silent = true, -- silence 'no signature help available' message
+    },
+  },
   hl_override = highlights.override,
   hl_add = highlights.add,
 }
