@@ -29,6 +29,11 @@ end
 
 require("core.utils").load_mappings("glance")
 glance.setup({
+  border = {
+    enable = true,
+    top_char = "",
+    bottom_char = "",
+  },
   hooks = {
     before_open = function(results, open, jump, method)
       if #results == 1 then
