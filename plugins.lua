@@ -229,6 +229,12 @@ local plugins = {
   },
   --- Miscellaneous ---
   {
+    "stevearc/oil.nvim",
+    event = "VeryLazy",
+    opts = {},
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+  {
     "folke/flash.nvim",
     -- event = "VeryLazy",
     ---@type Flash.Config
