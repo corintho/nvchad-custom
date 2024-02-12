@@ -331,6 +331,13 @@ local plugins = {
       defaults = { bold = true },
     },
   },
+  {
+    "mbbill/undotree",
+    event = "VeryLazy",
+    init = function()
+      vim.g.undotree_WindowLayout = 4
+    end,
+  },
 }
 
 return plugins
