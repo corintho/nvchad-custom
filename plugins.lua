@@ -233,6 +233,9 @@ local plugins = {
     event = "VeryLazy",
     opts = {},
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    init = function()
+      require("core.utils").load_mappings("oil")
+    end,
   },
   {
     "folke/flash.nvim",

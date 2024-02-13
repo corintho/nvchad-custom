@@ -160,4 +160,16 @@ M.trouble = {
   },
 }
 
+M.oil = {
+  plugin = true,
+  n = {
+    ["<leader>b."] = {
+      function()
+        require("oil").open()
+      end,
+      "Open buffer directory",
+    },
+  },
+}
+
 return M
