@@ -5,7 +5,7 @@ if not present then
   return
 end
 
-vim.g.codeium_enabled = true
+vim.g.codeium_enabled = false
 require("core.utils").load_mappings("codeium")
 codeium.setup()
 
