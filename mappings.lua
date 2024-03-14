@@ -65,6 +65,20 @@ M.biscuits = {
   },
 }
 
+M.codeium = {
+  plugin = true,
+  n = {
+    ["<leader>tc"] = {
+      function()
+        vim.g.codeium_enabled = not vim.g.codeium_enabled
+        print("Codeium is now " .. (vim.g.codeium_enabled and "enabled" or "disabled"))
+      end,
+      " Toggle codeium",
+    },
+  },
+}
+
+
 M.format = {
   plugin = true,
   n = {

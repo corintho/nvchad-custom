@@ -174,17 +174,10 @@ local plugins = {
   },
   {
     "Exafunction/codeium.nvim",
-    config = true,
     cmd = "Codeium",
     event = "LspAttach",
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    opts = function(_, opts)
-      table.insert(opts.sources, 1, {
-        name = "codeium",
-        soure_index = 2,
-      })
+    config = function()
+      require("custom.configs.codeium")
     end,
   },
   -- Requires Ollama running locally
