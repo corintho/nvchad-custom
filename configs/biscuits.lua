@@ -6,9 +6,7 @@ end
 
 require("core.utils").load_mappings("biscuits")
 biscuits.setup({
-  -- This has to be set to false to avoid issues with biscuits not showing up
-  -- but it is actually enabled on start anyway 🤷 
-  show_on_start = false,
+  show_on_start = true,
   cursor_line_only = true,
   default_config = {
     min_distance = 10,
