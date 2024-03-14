@@ -53,4 +53,13 @@ M.treesitter = {
   },
 }
 
+M.noice = {
+  routes = {
+    {
+      filter = { event = "msg_show", find = "vim_lsp_inlayhint" },
+      opts = { skip = true },
+    },
+  },
+}
+
 return M

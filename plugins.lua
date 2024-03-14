@@ -338,6 +338,7 @@ local plugins = {
     "folke/noice.nvim",
     event = "VeryLazy",
     config = true,
+    opts = overrides.noice,
     dependencies = {
       -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",
