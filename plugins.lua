@@ -207,6 +207,13 @@ local plugins = {
     },
   },
   {
+    "nvim-telescope/telescope-live-grep-args.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("telescope").load_extension("live_grep_args")
+    end,
+  },
+  {
     "nvim-telescope/telescope-ui-select.nvim",
     event = "VeryLazy",
     config = function()

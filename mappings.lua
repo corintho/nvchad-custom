@@ -13,7 +13,7 @@ M.general = {
     ["<leader>qq"] = { "<cmd>qa<cr>", "Quit all" },
     ["<leader>qQ"] = { "<cmd>qa!<cr>", "Force quit all" },
     ["<leader><space>"] = { "<cmd> Telescope find_files <CR>", "Find files" },
-    ["<leader>/"] = { "<cmd> Telescope live_grep <CR>", "Live Grep" },
+    ["<leader>/"] = { function() require('telescope').extensions.live_grep_args.live_grep_args({ additional_args = function() return { "--pcre2" } end }) end, "Live Grep" },
     ["<leader>,"] = { "<cmd>Telescope buffers show_all_buffers=true<cr>", "Switch Buffer" },
     ["<leader>`"] = { "<cmd>e #<cr>", "Last Buffer" },
   },
