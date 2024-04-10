@@ -95,6 +95,7 @@ local plugins = {
     config = function(_, opts)
       require("core.utils").load_mappings("trouble")
       require("trouble").setup(opts)
+      dofile(vim.g.base46_cache .. "trouble")
     end,
   },
 }
