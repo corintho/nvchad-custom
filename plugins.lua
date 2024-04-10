@@ -393,6 +393,7 @@ local plugins = {
       "nvim-treesitter/nvim-treesitter",
     },
   },
+  { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 }
 
 return plugins
