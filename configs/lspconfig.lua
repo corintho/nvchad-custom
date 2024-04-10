@@ -7,6 +7,7 @@ local servers = { "lua_ls", "html", "cssls", "eslint", "marksman", "yamlls", "do
 
 require("mason-lspconfig").setup({
   ensure_installed = servers,
+  automatic_installation = true,
 })
 
 require("mason-lspconfig").setup_handlers({
