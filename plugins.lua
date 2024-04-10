@@ -246,6 +246,15 @@ local plugins = {
   {
     'wakatime/vim-wakatime',
   },
+  {
+    'nvim-pack/nvim-spectre',
+    cmd = "Spectre",
+    event = "VeryLazy",
+    config = function(_, opts)
+      require("core.utils").load_mappings("spectre")
+      require("spectre").setup(opts)
+    end
+  },
 }
 
 return plugins
