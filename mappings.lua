@@ -45,8 +45,8 @@ M.general = {
       end,
       "Previous buffer",
     },
-    ["<leader>bx"] = { "<cmd>bd<cr>", "Close current buffer" },
-    ["<leader>bX"] = { "<cmd>%bd|e#<cr>", "Close other buffers" },
+    ["<leader>bd"] = { "<cmd>bd<cr>", "Close current buffer" },
+    ["<leader>bD"] = { "<cmd>%bd|e#<cr>", "Close other buffers" },
   },
   i = {
     ["kj"] = { "<ESC>", "escape insert mode", opts = { nowait = true } },
