@@ -7,12 +7,12 @@ M.general = {
   n = {
     -- Disable keymaps
     ["<C-s>"] = disabled,
-    ["<leader>ff"] = disabled,
     ["<leader>b"] = disabled,
     -- New additions
     ["<leader>qq"] = { "<cmd>qa<cr>", "Quit all" },
     ["<leader>qQ"] = { "<cmd>qa!<cr>", "Force quit all" },
     ["<leader><space>"] = { "<cmd> Telescope find_files <CR>", "Find files" },
+    ["<leader>ff"] = { "<cmd> Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>", " Find all files" },
     ["<leader>/"] = { function() require('telescope').extensions.live_grep_args.live_grep_args({ additional_args = function() return { "--pcre2" } end }) end, "Live Grep" },
     ["<leader>,"] = { "<cmd>Telescope buffers show_all_buffers=true<cr>", "Switch Buffer" },
     ["<leader>`"] = { "<cmd>e #<cr>", "Last Buffer" },
