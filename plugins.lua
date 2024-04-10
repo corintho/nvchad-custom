@@ -173,6 +173,18 @@ local plugins = {
     end,
   },
   {
+    "brunotvs/cmp-conventionalcommits",
+    ft = { "gitcommit" },
+    config = function()
+      require("cmp").setup.buffer({
+        sources = require("cmp_conventionalcommits").sources(
+          { { name = "conventionalcommits" } },
+          { { name = "buffer" } }
+        ),
+      })
+    end,
+  },
+  {
     "Exafunction/codeium.nvim",
     cmd = "Codeium",
     event = "LspAttach",
@@ -195,6 +207,9 @@ local plugins = {
       },
     },
   },
+  { "zbirenbaum/copilot-cmp", config = true, dependencies = { "copilot.lua" } },
+  -- Requires Ollama running locally
+  { "David-Kunz/gen.nvim", config = true, cmd = "Gen" },
   {
     "hrsh7th/nvim-cmp",
     dependencies = { "zbirenbaum/copilot-cmp" },
@@ -206,9 +221,6 @@ local plugins = {
       })
     end,
   },
-  { "zbirenbaum/copilot-cmp", config = true, dependencies = { "copilot.lua" } },
-  -- Requires Ollama running locally
-  { "David-Kunz/gen.nvim", config = true, cmd = "Gen" },
   --- Context information ---
   {
     "code-biscuits/nvim-biscuits",
