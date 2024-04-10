@@ -1,12 +1,15 @@
 local M = {}
 
 M.override = {
-    LazyGitBorder = {
+  LazyGitBorder = {
     fg = "none",
     bg = "none",
   },
 }
 
-M.add = { }
+M.add = {
+  NeogitDiffDelete = { link = "DiffDelete" },
+  NeogitDiffDeleteHighlight = { link = "DiffDelete" },
+}
 
 return M
