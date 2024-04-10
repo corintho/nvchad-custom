@@ -90,6 +90,7 @@ local plugins = {
       require("neogit").setup(opts)
     end,
   },
+  { "akinsho/git-conflict.nvim", version = "*", config = true, lazy = false },
   {
     "tzachar/local-highlight.nvim",
     event = { "CursorHold", "CursorHoldI" },

@@ -10,6 +10,8 @@ M.override = {
 M.add = {
   NeogitDiffDelete = { link = "DiffDelete" },
   NeogitDiffDeleteHighlight = { link = "DiffDelete" },
+  GitConflictCurrent = { link = "DiffDelete" },
+  GitConflictCurrentLabel = { link = "DiffDelete" },
 }
 
 return M
