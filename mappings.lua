@@ -57,6 +57,14 @@ M.session = {
   },
 }
 
+M.todo = {
+  plugin = true,
+  n = {
+    ["<leader>td"] = { "<CMD>TodoTrouble<CR>", " Todo/Fix/Fixme" },
+    ["<leader>ft"] = { "<CMD>TodoTelescope<CR>", " Telescope TODO" },
+  },
+}
+
 M.trouble = {
   plugin = true,
   n = {
