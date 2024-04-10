@@ -192,12 +192,12 @@ local plugins = {
     end,
   },
   {
-    "simrat39/symbols-outline.nvim",
+    "hedyhli/outline.nvim",
     event = "LspAttach",
-    cmd = "SymbolsOutline",
+    cmd = { "Outline", "OutlineOpen" },
     config = function()
       require("core.utils").load_mappings("outline")
-      require("symbols-outline").setup()
+      require("outline").setup()
     end,
   },
   {
