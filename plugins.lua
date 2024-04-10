@@ -187,6 +187,8 @@ local plugins = {
       })
     end,
   },
+  -- Requires Ollama running locally
+  { "David-Kunz/gen.nvim", config = true, cmd = "Gen" },
   --- Context information ---
   {
     "code-biscuits/nvim-biscuits",
@@ -313,7 +315,7 @@ local plugins = {
   },
   {
     "mawkler/modicator.nvim",
-    event ={ "VeryLazy" },
+    event = { "VeryLazy" },
     init = function()
       vim.o.cursorline = true
       vim.o.number = true
@@ -321,7 +323,7 @@ local plugins = {
     end,
     opts = {
       defaults = { bold = true },
-    }
+    },
   },
 }
 
