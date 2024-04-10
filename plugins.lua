@@ -118,6 +118,15 @@ local plugins = {
     opts = overrides.treesitter,
   },
   {
+    "dnlhc/glance.nvim",
+    event = "LspAttach",
+    cmd = "Glance",
+    config = function()
+      require("custom.configs.glance")
+    end,
+  },
+  --- Context information ---
+  {
     "code-biscuits/nvim-biscuits",
     lazy = false, --FIXME: There is currently a bug with LazyLoading: https://github.com/code-biscuits/nvim-biscuits/issues/47
     -- event = "LspAttach",
@@ -126,11 +135,10 @@ local plugins = {
     end,
   },
   {
-    "dnlhc/glance.nvim",
-    event = "LspAttach",
-    cmd = "Glance",
+    "shellRaining/hlchunk.nvim",
+    event = "BufReadPost",
     config = function()
-      require("custom.configs.glance")
+      require("custom.configs.hlchunk")
     end,
   },
   --- Miscellaneous ---
