@@ -205,6 +205,14 @@ local plugins = {
     event = "LspAttach",
     opts = { mode = "cursor", max_lines = 3 },
   },
+  {
+    "Bekaboo/dropbar.nvim",
+    lazy = false,
+    enabled = function ()
+     return vim.fn.has("nvim-0.10") == 1
+    end,
+    config = true,
+  },
   --- Miscellaneous ---
   {
     "folke/flash.nvim",
