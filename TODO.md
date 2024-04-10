@@ -9,4 +9,4 @@
 - [ ] Add lens (?) - https://github.com/VidocqH/lsp-lens.nvim
 - [ ] Add Noice - https://github.com/folke/noice.nvim
 - [ ] Add notify - https://github.com/rcarriga/nvim-notify
-
+- [ ] Add edgy (?) - https://github.com/folke/edgy.nvim
