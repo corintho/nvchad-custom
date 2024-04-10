@@ -133,6 +133,26 @@ local plugins = {
       require("custom.configs.glance")
     end,
   },
+  --- Miscellaneous ---
+  {
+    "nvim-telescope/telescope-ui-select.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("telescope").load_extension("ui-select")
+    end,
+  },
+  {
+    "ziontee113/icon-picker.nvim",
+    cmd = { "IconPickerNormal", "IconPickerYank", "IconPickerInsert" },
+    init = function()
+      require("core.utils").load_mappings("icon_picker")
+    end,
+    config = function()
+      require("icon-picker").setup({
+        disable_legacy_commands = true,
+      })
+    end,
+  },
 }
 
 return plugins
