@@ -208,8 +208,8 @@ local plugins = {
   {
     "Bekaboo/dropbar.nvim",
     lazy = false,
-    enabled = function ()
-     return vim.fn.has("nvim-0.10") == 1
+    enabled = function()
+      return vim.fn.has("nvim-0.10") == 1
     end,
     config = true,
   },
