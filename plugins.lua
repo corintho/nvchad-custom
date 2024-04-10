@@ -157,8 +157,17 @@ local plugins = {
       require("custom.configs.hlchunk")
     end,
   },
+  {
+    "simrat39/symbols-outline.nvim",
+    event = "LspAttach",
+    cmd = "SymbolsOutline",
+    config = function()
+      require("core.utils").load_mappings("outline")
+      require("symbols-outline").setup()
+    end,
+  },
   --- Miscellaneous ---
-  { -- Jump Jump Jump
+  {
     "folke/flash.nvim",
     -- event = "VeryLazy",
     ---@type Flash.Config

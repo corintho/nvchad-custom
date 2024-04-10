@@ -71,6 +71,13 @@ M.lazygit = {
   },
 }
 
+M.outline = {
+  plugin = true,
+  n = {
+    ["<leader>cs"] = { "<cmd>SymbolsOutline<cr>", " Symbols outline" },
+  },
+}
+
 M.session = {
   plugin = true,
   n = {
