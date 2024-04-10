@@ -1,12 +1,14 @@
 ---@class MappingsTable
 local M = {}
 
+local disabled = { "", "" }
 -- Additional quality of life mappings
 M.general = {
   n = {
     -- Disable keymaps
-    ["<C-s>"] = { "", "" },
-    ["<leader>ff"] = { "", "" },
+    ["<C-s>"] = disabled,
+    ["<leader>ff"] = disabled,
+    ["<leader>b"] = disabled,
     -- New additions
     ["<leader>qq"] = { "<cmd>qa<cr>", "Quit all" },
     ["<leader>qQ"] = { "<cmd>qa!<cr>", "Force quit all" },
@@ -17,6 +19,18 @@ M.general = {
   },
   i = {
     ["kj"] = { "<ESC>", "escape insert mode", opts = { nowait = true } },
+  },
+}
+
+M.biscuits = {
+  plugin = true,
+  n = {
+    ["<leader>bi"] = {
+      function()
+        require("nvim-biscuits").toggle_biscuits()
+      end,
+      "󰆘 Toggle context",
+    },
   },
 }
 

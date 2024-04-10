@@ -113,6 +113,18 @@ local plugins = {
       dofile(vim.g.base46_cache .. "trouble")
     end,
   },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = overrides.treesitter,
+  },
+  {
+    "code-biscuits/nvim-biscuits",
+    lazy = false, --FIXME: There is currently a bug with LazyLoading: https://github.com/code-biscuits/nvim-biscuits/issues/47
+    -- event = "LspAttach",
+    config = function()
+      require("custom.configs.biscuits")
+    end,
+  },
 }
 
 return plugins

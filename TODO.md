@@ -3,6 +3,6 @@
 - [X] Add LSP configuration for Javascript/Typescript/Prettier
 - [ ] Add outliner - https://github.com/simrat39/symbols-outline.nvim
 - [ ] Add code context helper - https://github.com/nvim-treesitter/nvim-treesitter-context
-- [ ] Add code biscuits - https://github.com/code-biscuits/nvim-biscuits
+- [X] Add code biscuits - https://github.com/code-biscuits/nvim-biscuits
 - [ ] Add multi selector - https://github.com/mg979/vim-visual-multi
 
