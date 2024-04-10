@@ -50,6 +50,13 @@ M.format = {
   },
 }
 
+M.glance = {
+  plugin = true,
+  n = {
+    ["gr"] = { "<CMD>Glance references<CR>", "󰘐 References" },
+  },
+}
+
 M.lazygit = {
   plugin = true,
   n = {
