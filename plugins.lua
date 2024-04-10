@@ -121,6 +121,7 @@ local plugins = {
   },
   {
     "folke/trouble.nvim",
+    event = { "LspAttach" },
     cmd = { "TroubleToggle", "Trouble" },
     opts = { use_diagnostic_signs = true },
     config = function(_, opts)
