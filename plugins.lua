@@ -231,11 +231,21 @@ local plugins = {
   {
     "stevearc/oil.nvim",
     event = "VeryLazy",
-    opts = {},
+    opts = {
+      win_options = {
+        signcolumn = "auto",
+      }
+    },
     dependencies = { "nvim-tree/nvim-web-devicons" },
     init = function()
       require("core.utils").load_mappings("oil")
     end,
+  },
+  {
+    "SirZenith/oil-vcs-status",
+    event = "VeryLazy",
+    opts = {},
+    dependencies = { "stevearc/oil.nvim" },
   },
   {
     "folke/flash.nvim",
