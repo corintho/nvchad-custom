@@ -9,8 +9,9 @@ M.ui = {
     theme = "vscode_colored",
   },
   extended_integrations = {
-    "trouble",
+    "notify",
     "todo",
+    "trouble",
   },
   hl_override = highlights.override,
   hl_add = highlights.add,
