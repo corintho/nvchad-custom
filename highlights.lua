@@ -1,12 +1,12 @@
 local M = {}
 
-M.override = {}
-
-M.add = {
-  LazyGitBorder = {
-    fg = "black2",
-    bg = "black2",
+M.override = {
+    LazyGitBorder = {
+    fg = "none",
+    bg = "none",
   },
 }
+
+M.add = { }
 
 return M
