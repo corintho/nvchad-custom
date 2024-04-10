@@ -64,6 +64,13 @@ local plugins = {
       require("core.utils").load_mappings("lazygit")
     end,
   },
+  {
+    "tzachar/local-highlight.nvim",
+    event = { "CursorHold", "CursorHoldI" },
+    opts = {
+      hlgroup = "LocalHighlight",
+    },
+  },
   --- Coding ---
   {
     "stevearc/conform.nvim",
