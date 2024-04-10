@@ -141,6 +141,21 @@ local plugins = {
       require("custom.configs.glance")
     end,
   },
+  {
+    "Exafunction/codeium.nvim",
+    config = true,
+    cmd = "Codeium",
+    event = "LspAttach",
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    opts = function(_, opts)
+      table.insert(opts.sources, 1, {
+        name = "codeium",
+        soure_index = 2,
+      })
+    end,
+  },
   --- Context information ---
   {
     "code-biscuits/nvim-biscuits",
