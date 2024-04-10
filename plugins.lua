@@ -234,7 +234,7 @@ local plugins = {
     opts = {
       win_options = {
         signcolumn = "auto",
-      }
+      },
     },
     dependencies = { "nvim-tree/nvim-web-devicons" },
     init = function()
@@ -350,6 +350,15 @@ local plugins = {
     init = function()
       vim.g.undotree_WindowLayout = 4
     end,
+  },
+  {
+    "tris203/hawtkeys.nvim",
+    config = true,
+    cmd ={ "Hawtkeys", "HawtkeysAll", "HawtkeysDupes" },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
   },
 }
 
