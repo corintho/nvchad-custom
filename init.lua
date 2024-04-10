@@ -3,36 +3,44 @@ vim.o.relativenumber = true
 vim.g.format_on_save = false
 vim.g.nvimtree_side = "right"
 
--- Setup for neovide
-if vim.g.neovide then
-    vim.o.guifont = "JetBrainsMono Nerd Font Mono:h14"
-    vim.g.neovide_cursor_animation_length = 0
+vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
+vim.g.mapleader = " "
 
-    -- Proper setup for OSX
-    if jit.os == "OSX" then
-      vim.g.neovide_input_macos_alt_is_meta = true
-      vim.g.neovide_input_use_logo = 1
-      vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true})
-      vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true})
-      vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true})
-      vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true})
-    end
+-- bootstrap lazy and all plugins
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+
+if not vim.loop.fs_stat(lazypath) then
+  local repo = "https://github.com/folke/lazy.nvim.git"
+  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
 end
 
--- Setup clipboard for WSL
-if vim.fn.has("wsl") == 1 then
-  vim.g.clipboard = {
-    name = 'WslClipboard',
-    copy = {
-       ['+'] = 'clip.exe',
-       ['*'] = 'clip.exe',
-     },
-    paste = {
-       ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-       ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-    },
-    cache_enabled = 0,
-  }
-end
+vim.opt.rtp:prepend(lazypath)
 
-require("custom.utils.autocmd")
+local lazy_config = require "configs.lazy"
+
+-- load plugins
+require("lazy").setup({
+  {
+    "NvChad/NvChad",
+    lazy = false,
+    branch = "v2.5",
+    import = "nvchad.plugins",
+    config = function()
+      require "options"
+    end,
+  },
+
+  { import = "plugins" },
+}, lazy_config)
+
+-- load theme
+dofile(vim.g.base46_cache .. "defaults")
+dofile(vim.g.base46_cache .. "statusline")
+
+require "nvchad.autocmds"
+
+vim.schedule(function()
+  require "mappings"
+end)
+
+require 'myinit'
