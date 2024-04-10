@@ -180,6 +180,33 @@ local plugins = {
       require("custom.configs.codeium")
     end,
   },
+  {
+    "zbirenbaum/copilot.lua",
+    config = true,
+    cmd = "Copilot",
+    event = "InsertEnter",
+    build = ":Copilot auth",
+    opts = {
+      suggestion = { enabled = false },
+      panel = { enabled = false },
+      filetypes = {
+        markdown = true,
+        help = true,
+      },
+    },
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = { "zbirenbaum/copilot-cmp" },
+    opts = function(_, opts)
+      table.insert(opts.sources, 1, {
+        name = "copilot",
+        group_index = 1,
+        priority = 100,
+      })
+    end,
+  },
+  { "zbirenbaum/copilot-cmp", config = true, dependencies = { "copilot.lua" } },
   -- Requires Ollama running locally
   { "David-Kunz/gen.nvim", config = true, cmd = "Gen" },
   --- Context information ---
@@ -347,7 +374,7 @@ local plugins = {
   {
     "tris203/hawtkeys.nvim",
     config = true,
-    cmd ={ "Hawtkeys", "HawtkeysAll", "HawtkeysDupes" },
+    cmd = { "Hawtkeys", "HawtkeysAll", "HawtkeysDupes" },
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
