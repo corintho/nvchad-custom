@@ -242,6 +242,9 @@ local plugins = {
       vim.cmd([[do FileType]])
     end,
   },
+  {
+    'wakatime/vim-wakatime',
+  },
 }
 
 return plugins
