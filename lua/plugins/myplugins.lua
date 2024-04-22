@@ -33,13 +33,16 @@ local plugins = {
   },
   {
     "pmizio/typescript-tools.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     ft = {
       "javascript",
       "typescript",
       "javascriptreact",
       "typescriptreact",
     },
-    config = function()
+    opts = {},
+    setup = function()
       require("configs.ts")
     end,
   },

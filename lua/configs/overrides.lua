@@ -17,7 +17,7 @@ M.mason = {
 
     -- Spell
     -- "codespell",
-    "marksman",
+    -- "marksman",
     -- "grammarly-languageserver",
 
     -- Json
@@ -54,6 +54,7 @@ M.treesitter = {
 }
 
 M.noice = {
+  -- These are manually enabled in the lspconfig.lua file
   lsp = {
     hover = {
       enabled = false,
@@ -61,6 +62,9 @@ M.noice = {
     signature = {
       enabled = false,
     },
+  },
+  presets = {
+    lsp_doc_border = true,
   },
   routes = {
     {

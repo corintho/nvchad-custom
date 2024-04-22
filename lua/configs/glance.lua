@@ -4,25 +4,6 @@ if not present then
   return
 end
 
-local configs = require "nvchad.configs.lspconfig"
-local lspconfig = require "lspconfig"
-local servers = lspconfig.util.available_servers()
-local my_attach = function(client, bufnr)
-  configs.on_attach(client, bufnr)
-  local function opts(desc)
-    return { buffer = bufnr, desc = desc }
-  end
-  vim.keymap.set("n", "gr", "<cmd>Glance references<cr>", opts "󰘐 References")
-end
-
-vim.schedule(function()
-  for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup {
-      on_attach = my_attach,
-    }
-  end
-end)
-
 local filter = function(arr, fn)
   if type(arr) ~= "table" then
     return arr

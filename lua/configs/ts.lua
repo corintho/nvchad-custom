@@ -45,7 +45,6 @@ local handlers = {
 }
 
 require("typescript-tools").setup({
-  on_attach = on_attach,
   handlers = handlers,
 
   settings = {
